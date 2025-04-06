@@ -1162,7 +1162,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Add friend"
-      description: "Add a friend by username or thier user Id"
+      description: "Add a friend by username or their user Id"
       parameters:
         $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
       tags:
