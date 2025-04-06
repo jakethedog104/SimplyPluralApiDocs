@@ -1653,7 +1653,7 @@ paths:
           content:
             application/json:
               schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/boardMessageContatiner"
         "404":
           description: NOT FOUND
     post:

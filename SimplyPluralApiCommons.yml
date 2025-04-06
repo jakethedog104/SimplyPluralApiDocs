@@ -23,7 +23,7 @@ components:
           type: boolean
         timestamp:
           description: Time in Milliseconds since epoch
-          type: long
+          type: integer
         uid:
           description: The user Id of the system
           type: string
