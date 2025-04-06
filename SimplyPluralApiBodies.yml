@@ -377,7 +377,7 @@ components:
           description: Whether this comment supports markdown
           type: boolean
         documentId:
-          description: Id of the object this comment belongs to
+          description: Id of the object this comment belongs to. Currently this will always be a document from the front history.
           type: string
         collection:
           description: 'Id of the collection this comments belongs to. Currently the only accepted collection is "frontHistory".'

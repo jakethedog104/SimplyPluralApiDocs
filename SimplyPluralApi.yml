@@ -455,21 +455,22 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get comments"
-      description: "Get comments from a document of a particular type (groups, members, customFronts, etc.)"
+      description: "Get comments from a document of a particular type. Currently the only accepted collection is \"frontHistory\"."
       parameters:
         - in: path
           name: id
           schema:
             type: string
           required: true
-          # todo: update this string
-          description: String Id of the document you wish to get comments from
+          description:
+            $ref: "./SimplyPluralApiBodies.yml#/components/schemas/comments/properties/documentId/description"
         - in: path
           name: type
           schema:
             type: string
           required: true
-          description: 'Type of the comment [Only supported type is frontHistory]'
+          description:
+            $ref: "./SimplyPluralApiBodies.yml#/components/schemas/comments/properties/collection/description"
       tags:
         - Comments
       responses:
