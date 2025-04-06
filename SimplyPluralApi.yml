@@ -250,6 +250,8 @@ paths:
         "404":
           description: NOT FOUND
     delete:
+      security:
+        - APITokenAuth: []
       summary: "Delete group"
       description: "Delete a group by Id"
       parameters:
@@ -438,6 +440,8 @@ paths:
 
   /v1/customFronts/{systemId}:
     get:
+      security:
+        - APITokenAuth: []
       summary: "Get all custom fronts"
       description: "Get custom fronts of a system by Id"
       parameters:
@@ -1290,7 +1294,6 @@ paths:
           description: OK
         "404":
           description: NOT FOUND
-
 
   /v1/integrations/pluralkit/sync/member/{id}:
     patch:
