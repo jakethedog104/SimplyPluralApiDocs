@@ -30,6 +30,23 @@ components:
         lastOperationTime:
           description: Time in milliseconds since epoch of the last update on this object
           type: integer
+        frame:
+          description: Subscriber settings for setting the frame around an avatar
+          type: object
+          properties:
+            bgShape:
+              description: Background shape
+              type: string
+            bgClip:
+              description: Background clip
+              type: string
+            bgStartColor:
+              description: Background start color
+              type: string
+            bgEndColor:
+              description: Background end color
+              type: string
+
 
   parameters:
     friendId:
