@@ -68,9 +68,10 @@ components:
       type: object
       properties:
         id:
-          type: string
           description:
             $ref: "#/components/schemas/analyticsSums/properties/id/description"
+          type:
+            $ref: "#/components/schemas/analyticsSums/properties/id/type"
         value:
           type: long
           description: Average length they fronted
@@ -79,9 +80,10 @@ components:
       type: object
       properties:
         id:
-          type: string
           description:
             $ref: "#/components/schemas/analyticsSums/properties/id/description"
+          type:
+            $ref: "#/components/schemas/analyticsSums/properties/id/type"
         value:
           type: long
           description: Maximum length they fronted
@@ -90,9 +92,10 @@ components:
       type: object
       properties:
         id:
-          type: string
           description:
             $ref: "#/components/schemas/analyticsSums/properties/id/description"
+          type:
+            $ref: "#/components/schemas/analyticsSums/properties/id/type"
         value:
           type: long
           description: Minimum length they fronted
@@ -101,9 +104,10 @@ components:
       type: object
       properties:
         id:
-          type: string
           description:
-            $ref: "#/components/schemas/automatedTimer/properties/type/description"
+            $ref: "#/components/schemas/analyticsSums/properties/id/description"
+          type:
+            $ref: "#/components/schemas/analyticsSums/properties/id/type"
         value:
           type: long
           description: Amount of times they fronted
@@ -142,26 +146,7 @@ components:
     automatedTimerInfo:
       type: object
       properties:
-        name:
-          description:
-            $ref: "#/components/schemas/automatedTimer/properties/name/description"
-          type: string
-        message:
-          description:
-            $ref: "#/components/schemas/automatedTimer/properties/message/description"
-          type: string
-        action:
-          description:
-            $ref: "#/components/schemas/automatedTimer/properties/type/description"
-          type: integer
-        delayInHours:
-          description:
-            $ref: "#/components/schemas/automatedTimer/properties/delayInHours/description"
-          type: integer
-        type:
-          description:
-            $ref: "#/components/schemas/automatedTimer/properties/type/description"
-          type: integer
+        $ref: "#/components/schemas/automatedTimer/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
@@ -215,35 +200,7 @@ components:
     boardMessageInfo:
       type: object
       properties:
-        title:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/title/description"
-          type: string
-        message:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/message/description"
-          type: string
-        writtenBy:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/writtenBy/description"
-          type: string
-        writtenFor:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/writtenFor/description"
-          type: string
-        writtenAt:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
-        read:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/read/description"
-          type: boolean
-        supportMarkdown:
-          description:
-            $ref: "#/components/schemas/boardMessage/properties/supportMarkdown/description"
-          type: boolean
+        $ref: "#/components/schemas/boardMessage/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
@@ -261,7 +218,8 @@ components:
         read:
           description:
             $ref: "#/components/schemas/boardMessage/properties/read/description"
-          type: boolean
+          type:
+            $ref: "#/components/schemas/boardMessage/properties/read/type"
 
     chatCategory:
       type: object
@@ -293,20 +251,7 @@ components:
     chatCategoryInfo:
       type: object
       properties:
-        name:
-          description:
-            $ref: "#/components/schemas/chatCategory/properties/name/description"
-          type: string
-        desc:
-          description:
-            $ref: "#/components/schemas/chatCategory/properties/desc/description"
-          type: string
-        channels:
-          description:
-            $ref: "#/components/schemas/chatCategory/properties/channels/description"
-          type: array
-          items:
-            type: string
+        $ref: "#/components/schemas/chatCategory/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
@@ -343,14 +288,7 @@ components:
     chatChannelInfo:
       type: object
       properties:
-        name:
-          description:
-            $ref: "#/components/schemas/chatChannel/properties/name/description"
-          type: string
-        desc:
-          description:
-            $ref: "#/components/schemas/chatChannel/properties/desc/description"
-          type: string
+        $ref: "#/components/schemas/chatChannel/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
@@ -377,7 +315,8 @@ components:
         writtenAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
         replyTo:
           description: Message Id this message is in reply to
           type: string
@@ -397,27 +336,7 @@ components:
     chatMessageInfo:
       type: object
       properties:
-        message:
-          description:
-            $ref: "#/components/schemas/chatMessage/properties/message/description"
-          type: string
-        channel:
-          description:
-            $ref: "#/components/schemas/chatMessage/properties/channel/description"
-          type: string
-        writer:
-          description:
-            $ref: "#/components/schemas/chatMessage/properties/writer/description"
-          type: string
-        writtenAt:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
-        replyTo:
-          description:
-            $ref: "#/components/schemas/chatMessage/properties/replyTo/description"
-          type: string
+        $ref: "#/components/schemas/chatMessage/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
@@ -433,12 +352,15 @@ components:
       type: object
       properties:
         message:
-          description: Message
-          type: string
+          description:
+            $ref: "#/components/schemas/chatMessage/properties/message/description"
+          type:
+            $ref: "#/components/schemas/chatMessage/properties/message/type"
         updatedAt:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type: integer
+          type: 
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
 
     comments:
       type: object
@@ -458,7 +380,7 @@ components:
           description: Id of the object this comment belongs to
           type: string
         collection:
-          description: Id of the collection this comments belongs to (Only accepted collection is "frontHistory")
+          description: 'Id of the collection this comments belongs to. Currently the only accepted collection is "frontHistory".'
           type: string
 
     commentsPatch:
@@ -467,11 +389,13 @@ components:
         text:
           description:
             $ref: "#/components/schemas/comments/properties/text/description"
-          type: string
+          type:
+            $ref: "#/components/schemas/comments/properties/text/type"
         supporMarkdown:
           description:
             $ref: "#/components/schemas/comments/properties/supporMarkdown/description"
-          type: boolean
+          type:
+            $ref: "#/components/schemas/comments/properties/supporMarkdown/type"
 
     customFront:
       type: object
@@ -625,37 +549,6 @@ components:
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
 
-    notesPatch:
-      type: object
-      properties:
-        note:
-          description:
-            $ref: "#/components/schemas/notes/properties/note/description"
-          type: string
-        title:
-          description:
-            $ref: "#/components/schemas/notes/properties/title/description"
-          type: string
-        color:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
-        member:
-          description:
-            $ref: "#/components/schemas/notes/properties/member/description"
-          type: boolean
-        date:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/timestamp/type"
-        supportDescMarkdown:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
-
     frontHistory:
       type: object
       properties:
@@ -727,38 +620,7 @@ components:
     repeatedTimerInfo:
       type: object
       properties:
-        name:
-          description:
-            $ref: "#/components/schemas/repeatedTimer/properties/name/description"
-          type: string
-        message:
-          description:
-            $ref: "#/components/schemas/repeatedTimer/properties/message/description"
-          type: string
-        dayInterval:
-          description:
-            $ref: "#/components/schemas/repeatedTimer/properties/dayInterval/description"
-          type: integer
-        time:
-          description:
-            $ref: "#/components/schemas/repeatedTimer/properties/time/description"
-          type: object
-          properties:
-            hour:
-              type: integer
-            minute:
-              type: integer
-        startTime:
-          description:
-            $ref: "#/components/schemas/repeatedTimer/properties/startTime/description"
-          type: object
-          properties:
-            year:
-              type: integer
-            month:
-              type: integer
-            day:
-              type: integer
+        $ref: "#/components/schemas/repeatedTimer/properties"
         uid:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"

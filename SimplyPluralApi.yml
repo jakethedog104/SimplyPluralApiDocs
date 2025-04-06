@@ -326,7 +326,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/notesPatch"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/notes"
       tags:
         - Notes
       responses:
