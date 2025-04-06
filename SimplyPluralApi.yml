@@ -1291,6 +1291,7 @@ paths:
         "404":
           description: NOT FOUND
 
+
   /v1/integrations/pluralkit/sync/member/{id}:
     patch:
       security:
