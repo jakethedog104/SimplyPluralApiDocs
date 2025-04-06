@@ -460,17 +460,18 @@ components:
     customFrontSend:
       type: object
       properties:
+        # todo: why does the bellow error out?
         $ref: "#/components/schemas/customFront/properties"
         private:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
+          description: Whether this object is private
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
+          description: Whether trusted friends are prevented from seeing this private object
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     groups:
       type: object
