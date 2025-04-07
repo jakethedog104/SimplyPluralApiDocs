@@ -70,16 +70,16 @@ components:
         description: Optional Id of the object. If supplied, this must be a mongodb objectID format. If not supplied, the API will generate the id for you.
         schema:
           type: string
-    systemId:
+    userId:
       - in: path
-        name: systemId
+        name: userId
         required: true
         description: The user Id of the system
         schema:
           type: string
-    systemIdAndObjectId:
+    userIdAndObjectId:
       - in: path
-        name: systemId
+        name: userId
         required: true
         description: The user Id of the system
         schema:

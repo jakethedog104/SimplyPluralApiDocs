@@ -105,7 +105,7 @@ components:
       name: Authorization
 
 paths:
-  /v1/member/{systemId}/{id}:
+  /v1/member/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -114,7 +114,7 @@ paths:
       tags:
         - Members
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       responses:
         "200":
           description: OK
@@ -177,30 +177,30 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/members/{systemId}:
+  /v1/members/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all members"
-      description: "Get members from a system by Id"
+      description: "Get members of a system by Id"
       tags:
         - Members
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
 
-  /v1/group/{systemId}/{id}:
+  /v1/group/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get group"
       description: "Get a group by Id"
       parameters:
-          $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+          $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Groups
       responses:
@@ -264,14 +264,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/groups/{systemId}:
+  /v1/groups/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all groups"
-      description: "Get groups of a system by Id"
+      description: "Get groups of a user by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Groups
       responses:
@@ -280,14 +280,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/note/{systemId}/{id}:
+  /v1/note/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get note"
       description: "Get a note by Id"
       parameters:
-          $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+          $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Notes
       responses:
@@ -351,14 +351,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/notes/{systemId}:
+  /v1/notes/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all notes"
-      description: "Get notes of a system by Id"
+      description: "Get notes of a user by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Notes
       responses:
@@ -367,14 +367,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/customFront/{systemId}/{id}:
+  /v1/customFront/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get custom front"
       description: "Get a Custom Front by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Custom Fronts
       responses:
@@ -450,14 +450,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/customFronts/{systemId}:
+  /v1/customFronts/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all custom fronts"
       description: "Get custom fronts of a system by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Custom Fronts
       responses:
@@ -556,30 +556,30 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/comments/{systemId}/{id}:
+  /v1/comments/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get specific comment"
-      description: "Get a specific comment from a system"
+      description: "Get a specific comment from a user"
       tags:
         - Comments
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       responses:
         "200":
           description: OK
         "404":
           description: NOT FOUND
 
-  /v1/poll/{systemId}/{id}:
+  /v1/poll/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get poll"
       description: "Get a Poll by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Polls
       responses:
@@ -643,14 +643,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/polls/{systemId}:
+  /v1/polls/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all polls"
-      description: "Get polls from a system"
+      description: "Get polls from a user"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Polls
       responses:
@@ -659,14 +659,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/timer/automated/{systemId}/{id}:
+  /v1/timer/automated/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get automated timer"
       description: "Get an Automated Timer by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Automated Timers
       responses:
@@ -743,14 +743,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/timers/automated/{systemId}:
+  /v1/timers/automated/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all automated timers"
-      description: "Get Automated Timers for a system"
+      description: "Get Automated Timers for a user"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Automated Timers
       responses:
@@ -765,7 +765,7 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/timer/repeated/{systemId}/{id}:
+  /v1/timer/repeated/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
@@ -774,7 +774,7 @@ paths:
       tags:
         - Repeated Timers
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       responses:
         "200":
           description: OK
@@ -840,14 +840,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/timers/repeated/{systemId}:
+  /v1/timers/repeated/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all repeated timers"
-      description: "Get Repeated Timers from a system"
+      description: "Get Repeated Timers from a user"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Repeated Timers
       responses:
@@ -867,7 +867,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get your current fronters"
-      description: "Get fronters from the currently authenticated system"
+      description: "Get fronters from the currently authenticated user"
       tags:
         - Front History
       responses:
@@ -876,14 +876,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/frontHistory/{systemId}:
+  /v1/frontHistory/{userId}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get front history"
       description: "Get Front History from a system between 2 timestamps"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - Front History
       responses:
@@ -961,14 +961,14 @@ paths:
           description: OK
         "404":
           description: NOT FOUND
-  /v1/frontHistory/{systemId}/{id}:
+  /v1/frontHistory/{userId}/{id}:
     get:
       security:
         - APITokenAuth: []
       summary: "Get specific front history entry"
       description: "Get a single Front History document by Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - Front History
       responses:
@@ -1092,14 +1092,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/user/{systemId}/reports:
+  /v1/user/{userId}/reports:
     get:
       security:
         - APITokenAuth: []
       summary: "Get all reports"
       description: "Get all reports of the authenticated user"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userId"
       tags:
         - User
       responses:
@@ -1112,14 +1112,14 @@ paths:
         "404":
           description: NOT FOUND
 
-  /v1/user/{systemId}/report/{id}:
+  /v1/user/{userId}/report/{id}:
     delete:
       security:
         - APITokenAuth: []
       summary: "Delete report"
       description: "Delete a specific report"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/systemIdAndObjectId"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/userIdAndObjectId"
       tags:
         - User
       responses:
@@ -1256,7 +1256,7 @@ paths:
           description: OK
         "404":
           description: NOT FOUND
-  /v1/friend/{systemId}/{friendId}:
+  /v1/friend/{userId}/{friendId}:
     get:
       security:
         - APITokenAuth: []
@@ -1266,7 +1266,7 @@ paths:
         - Friends
       parameters:
         - in: path
-          name: systemId
+          name: userId
           schema:
             type: string
           required: true
@@ -1768,7 +1768,7 @@ paths:
       security:
         - APITokenAuth: []
       summary: "Get unread board messages"
-      description: "Get all unread board messages for this system"
+      description: "Get all unread board messages for this user"
       tags:
         - Board Messages
       responses:
