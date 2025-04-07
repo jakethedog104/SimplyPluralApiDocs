@@ -538,16 +538,6 @@ components:
         avatarUrl:
           description: URL for the avatar
           type: string
-        private:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
-        preventTrusted:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
@@ -600,6 +590,22 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
+
+    memberSend:
+      type: object
+      properties:
+        # todo: why does the bellow error out?
+        $ref: "#/components/schemas/member/properties"
+        private:
+          description: Whether this object is private
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
+        preventTrusted:
+          description: Whether trusted friends are prevented from seeing this private object
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     notes:
       type: object

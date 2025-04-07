@@ -139,7 +139,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/member"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberSend"
 
       responses:
         "200":
@@ -162,7 +162,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/member"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberSend"
       tags:
         - Members
       responses:
