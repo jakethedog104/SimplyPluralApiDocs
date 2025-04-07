@@ -564,6 +564,43 @@ components:
               type: string
               description: Info object entry, id/key has to match an id/key from the user object, value is the value string
 
+    memberContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: The member Id
+          type: string
+        content:
+          description: The member content
+          $ref: "#/components/schemas/memberInfo"
+
+    memberInfo:
+      type: object
+      properties:
+        $ref: "#/components/schemas/member/properties"
+        buckets:
+          description: The privacy buckets for this front
+          type: array
+          items:
+            type: string
+        avatarUuid:
+          description: Id of the avatar uploaded
+          type: string
+        frame:
+          $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/frame"
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
+
     notes:
       type: object
       properties:

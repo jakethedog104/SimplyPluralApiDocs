@@ -118,6 +118,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberContainer"
         "404":
           description: NOT FOUND
   /v1/member/{id}:
@@ -140,6 +144,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberContainer"
         "404":
           description: NOT FOUND
     patch:
@@ -160,6 +168,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberContainer"
         "404":
           description: NOT FOUND
     delete:
@@ -190,6 +202,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/memberContainer"
         "404":
           description: NOT FOUND
 

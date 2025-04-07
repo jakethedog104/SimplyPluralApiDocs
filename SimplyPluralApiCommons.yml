@@ -47,7 +47,6 @@ components:
               description: Background end color
               type: string
 
-
   parameters:
     friendId:
       - in: path
