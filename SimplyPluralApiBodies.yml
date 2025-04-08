@@ -871,8 +871,10 @@ components:
       type: object
       properties:
         name:
+          description: The name of the field
           type: string
         order:
+          description: The order in which to display
           type: integer
         private:
           description:
@@ -885,6 +887,10 @@ components:
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         type:
+          description: The kind of field # todo: what numbers represent what?
           type: integer
         supportMarkdown:
-          type: boolean
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportMarkdown/type"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportMarkdown/type"
