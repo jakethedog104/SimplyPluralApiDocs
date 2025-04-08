@@ -875,9 +875,15 @@ components:
         order:
           type: integer
         private:
-          type: boolean
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
-          type: boolean
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         type:
           type: integer
         supportMarkdown:
