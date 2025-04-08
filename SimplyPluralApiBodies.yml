@@ -460,7 +460,7 @@ components:
     customFrontSend:
       type: object
       properties:
-        # todo: why does the bellow error out?
+        # todo: why does the below error out?
         $ref: "#/components/schemas/customFront/properties"
         private:
           description: Whether this object is private
@@ -473,7 +473,7 @@ components:
           type: boolean
             # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
-    groups:
+    group:
       type: object
       properties:
         name:
@@ -487,16 +487,6 @@ components:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/description"
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/color/type"
-        private:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
-        preventTrusted:
-          description:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
-          type:
-            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         supportDescMarkdown:
           description:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/description"
@@ -506,7 +496,7 @@ components:
           description: Emoji of the group
           type: string
         parent:
-          description: Parent group Id, if no parent use "root".
+          description: Parent group Id, if there is no parent then use "root".
           type: string
         members:
           description: Members of this group
@@ -514,6 +504,59 @@ components:
           items:
             type: string
             description: Id of the member
+
+    groupContainer:
+      type: object
+      properties:
+        exists:
+          type: boolean
+        id:
+          description: The group Id
+          type: string
+        content:
+          description: The group content
+          $ref: "#/components/schemas/groupInfo"
+
+    groupInfo:
+      type: object
+      properties:
+        $ref: "#/components/schemas/group/properties"
+        buckets:
+          description: The privacy buckets for this group
+          type: array
+          items:
+            type: string
+        avatarUuid:
+          description: Id of the avatar uploaded
+          type: string
+        frame:
+          $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/frame"
+        uid:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/uid/type"
+        lastOperationTime:
+          description:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/description"
+          type:
+            $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/lastOperationTime/type"
+
+    groupSend:
+      type: object
+      properties:
+        # todo: why does the below error out?
+        $ref: "#/components/schemas/group/properties"
+        private:
+          description: Whether this object is private
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
+        preventTrusted:
+          description: Whether trusted friends are prevented from seeing this private object
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          type: boolean
+            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     member:
       type: object
@@ -594,7 +637,7 @@ components:
     memberSend:
       type: object
       properties:
-        # todo: why does the bellow error out?
+        # todo: why does the below error out?
         $ref: "#/components/schemas/member/properties"
         private:
           description: Whether this object is private

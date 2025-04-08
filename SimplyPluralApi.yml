@@ -224,6 +224,10 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupContainer"
         "404":
           description: NOT FOUND
   /v1/group/{id}:
@@ -239,12 +243,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groups"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupSend"
       tags:
         - Groups
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupContainer"
         "404":
           description: NOT FOUND
     patch:
@@ -259,12 +267,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groups"
+              $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupSend"
       tags:
         - Groups
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupContainer"
         "404":
           description: NOT FOUND
     delete:
@@ -295,6 +307,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./SimplyPluralApiBodies.yml#/components/schemas/groupContainer"
         "404":
           description: NOT FOUND
 
