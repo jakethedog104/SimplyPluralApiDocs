@@ -587,7 +587,7 @@ components:
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/supportDescMarkdown/type"
         preventsFrontNotifs:
-          description: Whether to prefer front notification changes
+          description: Whether to prevent front notifications
           type: boolean
         info:
           description: Info object
