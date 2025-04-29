@@ -872,7 +872,15 @@ components:
           type:
             $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
         type:
-          description: The kind of field # todo: what numbers represent what?
+          description: "The kind of field.
+            0 -> string,
+            1 -> color,
+            2 -> date,
+            3 -> month,
+            4 -> year,
+            5 -> monthYear,
+            6 -> timestamp,
+            7 -> monthDay"
           type: integer
         supportMarkdown:
           description:
