@@ -426,10 +426,10 @@ components:
         exists:
           type: boolean
         id:
-          description: The message Id
+          description: The custom front Id
           type: string
         content:
-          description: The message content
+          description: The custom front content
           $ref: "#/components/schemas/customFrontInfo"
 
     customFrontInfo:
@@ -437,12 +437,12 @@ components:
       properties:
         $ref: "#/components/schemas/customFront/properties"
         buckets:
-          description: The privacy buckets for this front
+          description: The privacy buckets for this custom front
           type: array
           items:
             type: string
         avatarUuid:
-          description: Id of the avatar uploaded
+          description: Id of the uploaded avatar
           type: string
         frame:
           $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/frame"
@@ -460,18 +460,13 @@ components:
     customFrontSend:
       type: object
       properties:
-        # todo: why does the below error out?
         $ref: "#/components/schemas/customFront/properties"
         private:
-          description: Whether this object is private
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          description: Whether this custom front is private
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
-          description: Whether trusted friends are prevented from seeing this private object
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          description: Whether trusted friends are prevented from seeing this private custom front
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     group:
       type: object
@@ -527,7 +522,7 @@ components:
           items:
             type: string
         avatarUuid:
-          description: Id of the avatar uploaded
+          description: Id of the uploaded avatar
           type: string
         frame:
           $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/frame"
@@ -545,18 +540,13 @@ components:
     groupSend:
       type: object
       properties:
-        # todo: why does the below error out?
         $ref: "#/components/schemas/group/properties"
         private:
-          description: Whether this object is private
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          description: Whether this group is private
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
-          description: Whether trusted friends are prevented from seeing this private object
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          description: Whether trusted friends are prevented from seeing this private group
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     member:
       type: object
@@ -619,7 +609,7 @@ components:
           items:
             type: string
         avatarUuid:
-          description: Id of the avatar uploaded
+          description: Id of the uploaded avatar
           type: string
         frame:
           $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/frame"
@@ -637,18 +627,13 @@ components:
     memberSend:
       type: object
       properties:
-        # todo: why does the below error out?
         $ref: "#/components/schemas/member/properties"
         private:
-          description: Whether this object is private
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/description"
+          description: Whether this member is private
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/private/type"
         preventTrusted:
-          description: Whether trusted friends are prevented from seeing this private object
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/description"
+          description: Whether trusted friends are prevented from seeing this private member
           type: boolean
-            # $ref: "./SimplyPluralApiCommons.yml#/components/schemas/commons/properties/preventTrusted/type"
 
     notes:
       type: object

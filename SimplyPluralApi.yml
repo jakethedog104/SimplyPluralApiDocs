@@ -1223,7 +1223,7 @@ paths:
       summary: "Add friend"
       description: "Add a friend by username or their user Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/usernameOrId"
       tags:
         - Friends
       responses:
@@ -1238,7 +1238,7 @@ paths:
       summary: "Respond to friend request"
       description: "Respond to a friend request by username or thier user Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/usernameOrId"
       tags:
         - Friends
       responses:
@@ -1253,7 +1253,7 @@ paths:
       summary: "Delete friend request"
       description: "Remove a friend request"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/usernameOrId"
       tags:
         - Friends
       responses:
@@ -1268,7 +1268,7 @@ paths:
       summary: "Remove friend"
       description: "Remove a friend by username or thier user Id"
       parameters:
-        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/username"
+        $ref: "./SimplyPluralApiCommons.yml#/components/parameters/usernameOrId"
       tags:
         - Friends
       responses:
@@ -1365,7 +1365,7 @@ paths:
         "404":
           description: NOT FOUND
   /v1/integrations/pluralkit/sync/members:
-    get:
+    patch:
       security:
         - APITokenAuth: []
       summary: "Sync all members to or from pluralkit"
